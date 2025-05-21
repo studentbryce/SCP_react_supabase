@@ -1,0 +1,725 @@
+body {
+  background-color: #000000;
+  margin-top: 10;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-bottom: 5px solid #222;
+}
+
+/* Styling for footer elements */
+.footer {
+  font-size: 24px;
+  padding: 20px;
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  font-family: "Special Elite", system-ui;
+  cursor: pointer;
+}
+
+.footer a {
+  font-size: 28px;
+  color: #ffffff;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: rgba(255, 0, 0, 0.3);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1000; /* ensure it stays above other content */
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Special Elite", system-ui;
+}
+
+.navbar-header {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Navbar buttons */
+.navbar-btn {
+  font-size: 30px;
+  padding: 15px;
+  padding-bottom: 10px;
+  margin-top: 25px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: "Special Elite", system-ui;
+  cursor: pointer;
+  transition: 0.3s;
+  line-height: 1;
+  border-radius: 5px;
+}
+
+/* Nav menu buttons */
+.nav-menu button {
+  font-size: 30px;
+  padding: 20px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: "Special Elite", system-ui;
+  cursor: pointer;
+  transition: 0.3s;
+  line-height: 1;
+  border-radius: 5px;
+}
+
+/* Menu dropdown */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 6px 0;
+  border-top: 1px solid #444;
+  width: 100%;
+  max-width: 1200px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  max-height: calc(100vh - 110px);
+  /* Limit height to viewport */
+  overflow-y: auto;
+  /* Scroll vertically if content overflows */
+  overscroll-behavior: contain;
+  /* Prevent parent scroll chaining */
+}
+
+/* Hover effect for nav buttons */
+.navbar button:hover,
+.nav-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu li {
+  margin: 6px 0;
+  text-align: center;
+  list-style: none;
+}
+
+/* Webkit-based browsers */
+.nav-menu::-webkit-scrollbar {
+  width: 20px;
+}
+
+.nav-menu::-webkit-scrollbar-track {
+  background: #111;
+  /* dark track */
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: #444;
+  /* dark gray thumb */
+  border-radius: 6px;
+  border: 2px solid #111;
+  /* match track background */
+}
+
+.nav-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+  /* lighter on hover */
+}
+
+/* Firefox */
+.nav-menu {
+  scrollbar-width: auto;
+  /* "auto" or "thin" */
+  scrollbar-color: #444 #111;
+  /* thumb color, track color */
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  gap: 20px;
+  /* Space between items */
+  margin-top: 20px;
+}
+
+.homepage-item {
+  width: 90%;
+  /* Adjust width */
+  height: auto;
+  /* Adjust height */
+  max-width: 600px;
+  /* Limit max width */
+  background-color: #222;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.homepage-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(255, 0, 0, 0.5);
+}
+
+.homepage-item a {
+  text-decoration: none;
+  /* Remove the underline */
+  color: inherit;
+  /* Inherit the color from parent */
+}
+
+.homepage-image {
+  width: 100%;
+  /* Make images responsive */
+  max-width: 500px;
+  /* Limit max width */
+  height: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.homepage-item h2 {
+  color: white;
+  font-family: "Special Elite", system-ui;
+  font-size: 22px;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+/* Container for the JSON Items */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 2px solid #666;
+  box-sizing: border-box;
+}
+
+/* Heading */
+h1 {
+  font-family: "Special Elite", system-ui;
+  font-size: 42px;
+  color: #dddddd;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Card Layout */
+.card {
+  background-color: #222;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(255, 0, 0, 0.3);
+}
+
+/* Card Content */
+.card-content {
+  padding: 10px;
+}
+
+/* Card Title */
+.card h2 {
+  font-size: 36px;
+  font-family: "Special Elite", system-ui;
+  color: #dddddd;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-family: "Special Elite", system-ui;
+  color: #dddddd;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Card Description */
+.card p,
+ul {
+  font-size: 16px;
+  color: #dddddd;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form {
+  font-family: "Special Elite", system-ui;
+  font-size: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.form-input,
+.form-textarea {
+  font-family: "Special Elite", system-ui;
+  width: 99%;
+  padding: 10px 5px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 20px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: 1px solid #818181;
+  box-shadow: 4px 4px 8px rgba(255, 0, 0, 0.3);
+
+}
+
+.form-textarea {
+  height: 160px;
+  resize: vertical;
+}
+
+.login-form {
+  font-family: "Special Elite", system-ui;
+  font-size: 28px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.login-form h2 {
+  font-size: 36px;
+}
+
+.login-input {
+  font-family: "Special Elite", system-ui;
+  width: 60%;
+  padding: 10px 5px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 20px;
+}
+
+.submit-button {
+  width: 40%;
+  padding: 10px;
+  background-color: #636363;
+  border-radius: 6px;
+  font-size: 24px;
+  font-family: "Special Elite", system-ui;
+  color: #ddd;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #363636;
+  box-shadow: 4px 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.error-message {
+  color: #e14e4e;
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 4px 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.success-message {
+  color: #4caf50;
+  background-color: #112b11;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(255, 0, 0, 0.2);
+}
+
+.scp-image {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+}
+
+.delete-btn, .update-btn{
+  margin: 10px;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #b30600;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Special Elite", system-ui;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover, .update-btn:hover {
+  background-color: #ff0800;
+}
+
+.signup-btn, .login-btn{
+  margin: 10px;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #24b400;
+  color: rgb(15, 63, 0);
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Special Elite", system-ui;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-btn:hover, .login-btn:hover {
+  background-color: #33ff00;
+}
+
+.cancel-btn{
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #b30600;
+  color: #350200;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Special Elite", system-ui;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-btn:hover {
+  background-color: #ff0800;
+}
+
+@media (max-width: 1220px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .homepage-item {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .navbar {
+    height: 80px;
+    padding: 10px 10px;
+  }
+
+  .navbar-btn {
+    font-size: 24px;
+    padding-top: 15px;
+    margin: 35px 50px 0px 40px;
+  }
+
+  .nav-menu {
+    top: 95px;
+    width: 95vw;
+    max-height: calc(100vh - 120px);
+    margin-left: -10px
+  }
+
+  .nav-menu button {
+    font-size: 28px;
+    padding: 5px;
+    padding-top: 10px;
+    margin-top: 20px;
+  }
+
+  /* Styling for footer elements */
+  .footer {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .footer a {
+    font-size: 20px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 5px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .homepage-item {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .navbar {
+    height: 80px;
+    padding: 5px 10px;
+  }
+
+  .navbar-btn {
+    font-size: 24px;
+    padding-top: 15px;
+    margin: 30px 30px 0px 20px;
+  }
+
+  .nav-menu {
+    top: 90px;
+    max-height: calc(100vh - 100px);
+  }
+
+  .nav-menu button {
+    font-size: 24px;
+    padding: 5px;
+    padding-top: 10px;
+    margin-top: 15px;
+  }
+
+  /* Styling for footer elements */
+  .footer {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .footer a {
+    font-size: 16px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 2px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .homepage-item {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .navbar {
+    height: 70px;
+    padding: 5px 5px;
+  }
+
+  .navbar-header {
+    padding: 0px 15px 0px 5px;
+    margin: 2px;
+    justify-content: space-evenly;
+}
+
+  .navbar-btn {
+    font-size: 18px;
+    padding: 8px;
+    padding-top: 15px;
+    margin: 20px 0px 0px 0px;
+  }
+
+  .nav-menu {
+    font-size: 18px;
+    top: 80px;
+    max-height: calc(100vh - 90px);
+  }
+
+  .nav-menu button {
+    font-size: 20px;
+    padding: 5px;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .login-form h2 {
+  font-size: 28px;
+  }
+
+  .login-form p {
+  font-size: 24px;
+  }
+
+  .login-form button {
+  font-size: 16px;
+  }
+
+  .login-input {
+  font-size: 16px;
+  }
+
+  /* Styling for footer elements */
+  .footer {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .footer a {
+    font-size: 11px;
+    padding: 2px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p,
+  ul {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 460px) {
+  body {
+    padding: 1px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .homepage-item {
+    width: 95%;
+    padding: 5px;
+  }
+
+  .navbar {
+    height: 60px;
+  }
+
+  .nav-menu {
+    top: 70px;
+    max-height: calc(100vh - 80px);
+  }
+
+  .nav-menu button {
+    font-size: 16px;
+    padding: 5px;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  /* Styling for footer elements */
+  .footer {
+    font-size: 8px;
+    padding: 2px;
+  }
+
+  .footer a {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p,
+  ul {
+    font-size: 14px;
+  }
+}
