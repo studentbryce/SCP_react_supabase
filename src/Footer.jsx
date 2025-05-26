@@ -1,6 +1,7 @@
 import React from "react";
-import "./App.css";
+import "./App.css";  // Import CSS for styling
 
+// Card component to display individual SCP items
 const Footer = () => {
     return (
         <div className="footer">

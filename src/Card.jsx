@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 
+// Card component to display individual SCP items
 const Card = ({ item }) => {
   return (
     <div className="card">

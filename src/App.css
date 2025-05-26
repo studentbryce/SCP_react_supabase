@@ -7,9 +7,9 @@ body {
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
-  /* Prevent horizontal scrolling */
 }
 
+/* Styling for the authentication modal */
 .auth-modal {
   position: fixed;
   top: 0;
@@ -23,6 +23,7 @@ body {
   z-index: 1000;
 }
 
+/* Header styling */
 .header {
   width: 100%;
   text-align: center;
@@ -59,6 +60,7 @@ body {
   color: rgba(255, 0, 0, 0.3);
 }
 
+/* Navbar styling */
 .navbar {
   position: fixed;
   top: 0;
@@ -285,6 +287,7 @@ h1 {
   margin-bottom: 8px;
 }
 
+/* Card Subtitle */
 .card h3 {
   font-size: 24px;
   font-family: "Special Elite", system-ui;
@@ -302,6 +305,7 @@ ul {
   line-height: 1.5;
 }
 
+/* Create-Update Item Form */
 .form {
   font-family: "Special Elite", system-ui;
   font-size: 28px;
@@ -313,12 +317,14 @@ ul {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
+/* Form Heading */
 .form h2 {
   margin-bottom: 20px;
   font-size: 36px;
   text-align: center;
 }
 
+/* Form Inputs */
 .form-input,
 .form-textarea {
   font-family: "Special Elite", system-ui;
@@ -332,6 +338,7 @@ ul {
   font-size: 20px;
 }
 
+/* Form Input Focus */
 .form-input:focus,
 .form-textarea:focus {
   outline: 1px solid #818181;
@@ -339,6 +346,7 @@ ul {
 
 }
 
+/* Form textarea */
 .form-textarea {
   height: 160px;
   resize: vertical;
@@ -358,6 +366,7 @@ ul {
   font-size: 36px;
 }
 
+/* login input */
 .login-input {
   font-family: "Special Elite", system-ui;
   width: 60%;
@@ -370,6 +379,7 @@ ul {
   font-size: 20px;
 }
 
+/* submit button */
 .submit-button {
   width: 40%;
   padding: 10px;
@@ -389,6 +399,7 @@ ul {
   box-shadow: 4px 4px 8px rgba(255, 0, 0, 0.3);
 }
 
+/* Error and Success Messages */
 .error-message {
   color: #e14e4e;
   background-color: rgba(255, 0, 0, 0.3);
@@ -409,6 +420,7 @@ ul {
   box-shadow: 0px 2px 6px rgba(255, 0, 0, 0.2);
 }
 
+/* Image styling */
 .scp-image {
   width: 90%;
   max-width: 1200px;
@@ -419,6 +431,7 @@ ul {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
 }
 
+/* Button styling */
 .delete-btn, .update-btn{
   margin: 10px;
   margin-top: 20px;
@@ -475,6 +488,7 @@ ul {
   background-color: #ff0800;
 }
 
+/* Responsive Design */
 @media (max-width: 1220px) {
   body {
     padding: 10px;
@@ -514,7 +528,6 @@ ul {
     margin-top: 20px;
   }
 
-  /* Styling for footer elements */
   .footer {
     font-size: 18px;
     padding: 15px;
@@ -563,7 +576,6 @@ ul {
     margin-top: 15px;
   }
 
-  /* Styling for footer elements */
   .footer {
     font-size: 14px;
     padding: 5px;
@@ -636,7 +648,6 @@ ul {
   font-size: 16px;
   }
 
-  /* Styling for footer elements */
   .footer {
     font-size: 10px;
     padding: 2px;
@@ -695,7 +706,6 @@ ul {
     margin-top: 10px;
   }
 
-  /* Styling for footer elements */
   .footer {
     font-size: 8px;
     padding: 2px;
